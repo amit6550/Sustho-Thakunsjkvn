@@ -1,0 +1,69 @@
+<script type="text/javascript">
+  var pid = "none";
+  function showhide(id) {
+    var elements = document.getElementById(id).childNodes;
+    var menu = elements[3];
+    var arrow = ((elements[1].childNodes)[4].childNodes)[1];
+    if(menu.style.display == 'block') {
+      menu.style.display = "none";
+      arrow.style.transform = "rotate(0deg)";
+      elements[1].style.color = "#eeeeee";
+    }
+    else {
+      menu.style.display = "block";
+      arrow.style.transform = "rotate(270deg)";
+      elements[1].style.color = "#ff5252";
+    }
+    if(pid == id)
+      pid = "none";
+    if(pid != "none") {
+      elements = document.getElementById(pid).childNodes;
+      menu = (document.getElementById(pid).childNodes)[3];
+      arrow = ((elements[1].childNodes)[4].childNodes)[1];
+      if(menu.style.display == 'block') {
+        menu.style.display = "none";
+        arrow.style.transform = "rotate(0deg)";
+        elements[1].style.color = "#eeeeee";
+      }
+    }
+    pid = id;
+  }
+
+  function showOptions() {
+    var flag = document.getElementById('options');
+    if(flag.style.display == 'block') {
+      flag.style.display = "none";
+      document.getElementById('mark').style.display = "none";
+    }
+    else {
+      flag.style.display = "block";
+      document.getElementById('mark').style.display = "block";
+    }
+  }
+</script>
+
+<div class="sidenav">
+  <div class="card">
+    <div class="card-body">
+      <div class="logo">
+        <img src="images/doctor.jpg" width="120" height="120" class="profile"/>
+        <h1 class="logo-caption"><span class="tweak">A</span>dmin</h1>
+      </div> <!-- logo class -->
+
+      <div id="third" class="main-menu-item" onclick="showhide(this.id);">
+      	<a href="#">
+      		<i class="fa fa-shopping-bag"></i><span>Medicine</span>
+      		<span class="pull-right-container">
+      			<i class="fa fa-angle-left pull-right"></i>
+      		</span>
+      	</a>
+      	<ul class="treeview-menu" style="display: none;">
+      		<li class="treeview"><a href="index.php">Add Medicine</a></li>
+      		<li class="treeview"><a href="manage_medicine.php">Manage Medicine</a></li>
+          <!-- <li class="treeview"><a href="manage_medicine_stock.php">Manage Medicine Stock</a></li> -->
+      	</ul>
+      </div>
+   
+    </div> <!-- card-body class -->
+  </div> <!-- card  -->
+</div>

@@ -1,0 +1,62 @@
+  <form action="add_new_medicine.php" method="post" enctype="multipart/form-data">
+
+  <div class="row col col-md-12">
+
+  <div class="col col-md-8 form-group">
+    <label class="font-weight-bold" for="medicine_name">Medicine Name :</label>
+    <input type="text" class="form-control" name="medicine_name" id="medicine_name" placeholder="Medicine Name" onblur="notNull(this.value, 'medicine_name_error');">
+  </div>
+  <div class="col col-md-4 form-group">
+    <label class="font-weight-bold" for="packing">Packing :</label>
+    <input type="text" class="form-control" name="packing" id="packing" placeholder="Packing e.g. 10 TAB / 100 ML" onblur="notNull(this.value, 'pack_error');">
+  </div>
+</div>
+
+<div class="row col col-md-12">
+  <div class="col col-md-12 form-group">
+    <label class="font-weight-bold" for="generic_name">Generic Name :</label>
+    <input type="text" class="form-control" name="generic_name" id="generic_name" placeholder="Generic Name" onblur="notNull(this.value, 'generic_name_error');">
+  </div>
+</div>
+
+<div class="row col col-md-12">
+  <div class="col col-md-12 form-group">
+    <label class="font-weight-bold" for="price">Price :</label>
+    <input type="number" class="form-control" name="price" id="price" placeholder="Price">
+  </div>
+</div>
+
+<div class="row col col-md-12">
+  <div class="col col-md-12 form-group">
+    <label class="font-weight-bold" for="description">Description :</label>
+    <textarea name="description" type="text" class="form-control" id="description" placeholder="Description"></textarea>
+  </div>
+</div>
+<div class="row col col-md-12">
+  <div class="col col-md-12 form-group">
+    <label class="font-weight-bold" for="image">Image :</label>
+    <input type="file" accept="image/*" class="form-control" id="image" name="img" placeholder="Select image">
+  </div>
+</div>
+
+<div class="col col-md-12">
+  <hr class="col-md-12 float-left" style="padding: 0px; width: 95%; border-top: 2px solid  #02b6ff;">
+</div>
+
+<!-- new user button -->
+<div class="row col col-md-12">
+  &emsp;
+  <div class="form-group m-auto">
+    <button type="submit" name="submit" class="btn btn-primary form-control">ADD</button>
+  </div>
+  <!--
+  &emsp;
+  <div class="form-group">
+    <button class="btn btn-success form-control">Save and Add Another</button>
+  </div>
+-->
+</div>
+<!-- customer details content end -->
+<!-- result message -->
+<div id="medicine_acknowledgement" class="col-md-12 h5 text-success font-weight-bold text-center" style="font-family: sans-serif;"></div>
+</form>
